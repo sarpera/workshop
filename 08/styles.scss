@@ -1,0 +1,20 @@
+.jumbotron {
+
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form):not(fieldset):not(.ng-untouched)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+button {
+  cursor: pointer;
+}

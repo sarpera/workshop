@@ -1,0 +1,12 @@
+<h1>Cocktails</h1>
+
+<div class="cocktails-list">
+    <div class="cocktail" *ngFor="let cocktail of cocktails">
+        <div class="card-head">
+            <span>{{ cocktail.name }}</span>
+        </div>
+        <div class="card-body">
+            {{ cocktail.description }}
+        </div>
+    </div>
+</div>

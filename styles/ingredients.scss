@@ -1,0 +1,24 @@
+.ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ingredient-list-item {
+  flex: 0 0 100px;
+  padding: 1em;
+
+  img {
+    height: 100px;
+    width: 100px;
+    display: block;
+  }
+
+  .ingredient-name {
+    text-align: center;
+  }
+}
+
+input {
+  width: 200px;
+  margin-bottom: 2em;
+}

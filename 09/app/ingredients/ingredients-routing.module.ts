@@ -1,0 +1,19 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { IngredientsComponent } from './ingredients.component';
+
+const routes: Routes = [
+    {
+        path     : '',
+        component: IngredientsComponent
+    }
+];
+
+@NgModule({
+    imports  : [RouterModule.forChild(routes)],
+    exports  : [RouterModule],
+    providers: []
+})
+export class IngredientsRoutingModule {
+}
+

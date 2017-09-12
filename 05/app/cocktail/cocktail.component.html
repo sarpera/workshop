@@ -1,0 +1,32 @@
+<ng-container *ngIf="cocktail">
+
+    <a routerLink="../"><- Go back</a>
+
+    <h1>{{ cocktail.name }}</h1>
+    <p>{{ cocktail.description }}</p>
+
+    <section>
+        <h2>Ingredients:</h2>
+        <div class="ingredients">
+            <span class="ingredient" *ngFor="let ingredient of cocktail.ingredients">{{ ingredient }}</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Recipe:</h2>
+        <div class="recipe">
+
+            <ul>
+                <li *ngFor="let step of cocktail.steps">{{ step }}</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Rating:</h2>
+        <div class="rating">
+            <span class="star" [class.solid]="rating <= cocktail.rating" *ngFor="let rating of [1, 2, 3, 4, 5]"></span>
+        </div>
+    </section>
+</ng-container>

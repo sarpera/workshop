@@ -1,0 +1,35 @@
+.cocktails-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cocktail {
+  flex: 0 0 200px;
+  display: block;
+  margin-right: 2em;
+  margin-bottom: 2em;
+
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 25px;
+}
+
+.card-head {
+  height: 180px;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center !important;
+
+  background-color: lightcoral;
+
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+
+  span {
+    align-self: center;
+    color: white;
+    font-weight: bold;
+  }
+
+}

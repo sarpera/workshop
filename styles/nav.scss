@@ -1,0 +1,39 @@
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: #343a40;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  padding: .5rem 1rem;
+
+  .navbar-nav {
+    flex-direction: row;
+
+    .nav-link{
+      padding-right: .5rem;
+      padding-left: .5rem;
+    }
+  }
+
+  .brand {
+    color: #fff;
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+}

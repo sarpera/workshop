@@ -1,0 +1,57 @@
+<ng-container *ngIf="cocktail">
+
+    <a routerLink="../"><- Go back</a>
+
+    <div class="jumbotron">
+        <h1>{{ cocktail.name }}</h1>
+        <p>{{ cocktail.description }}</p>
+        <p>
+            <button class="btn btn-outline-secondary" (click)="showEditor = !showEditor">Edit</button>
+            <button class="btn btn-outline-danger" (click)="deleteCocktail()">Delete</button>
+        </p>
+        <p>
+
+        </p>
+    </div>
+
+    <np-cocktail-editor *ngIf="showEditor" (saved)="fetchCocktail(); showEditor = false;" [cocktail]="cocktail"></np-cocktail-editor>
+
+    <div class="content" *ngIf="!showEditor">
+
+        <div class="image">
+            <section *ngIf="cocktail.image">
+                <img [src]="cocktail.image">
+            </section>
+        </div>
+
+        <div class="details">
+            <section>
+                <h2>Ingredients:</h2>
+                <div class="ingredients">
+                    <span class="ingredient" *ngFor="let ingredient of cocktail.ingredients">{{ ingredient }}</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Recipe:</h2>
+                <div class="recipe">
+
+                    <ul>
+                        <li *ngFor="let step of cocktail.steps">{{ step }}</li>
+                    </ul>
+
+                </div>
+            </section>
+
+            <section>
+                <h2>Rating:</h2>
+                <div class="rating">
+                    <span class="star" [class.solid]="rating <= cocktail.rating" *ngFor="let rating of [1, 2, 3, 4, 5]"></span>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+
+</ng-container>

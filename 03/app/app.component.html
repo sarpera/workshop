@@ -1,0 +1,16 @@
+<div class="cocktails" [class.shrink]="cocktail">
+    <h1>Cocktails</h1>
+
+    <div class="cocktails-list">
+        <div class="cocktail" *ngFor="let cocktail of cocktails">
+            <div class="card-head" (click)="selectCocktail(cocktail)">
+                <span>{{ cocktail.name }}</span>
+            </div>
+            <div class="card-body">
+                {{ cocktail.description }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<np-cocktail [cocktail]="cocktail" *ngIf="cocktail" class="cocktail-info"></np-cocktail>

@@ -1,0 +1,81 @@
+<form class="cocktail-form" [formGroup]="cocktailForm" novalidate>
+
+    <fieldset [disabled]="isFormBusy">
+
+        <div class="form-group">
+            <label>Name:
+                <input class="form-control" formControlName="name" type="text">
+            </label>
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+                <div *ngIf="name.errors.required">
+                    Name is required.
+                </div>
+                <div *ngIf="name.errors.maxlength">
+                    Name cannot be more than 64 characters long.
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Description:
+                <textarea class="form-control" formControlName="description"></textarea>
+            </label>
+        </div>
+
+        <fieldset class="form-group steps" formArrayName="steps">
+            <legend>Steps:</legend>
+
+            <div class="input-group" *ngFor="let step of steps.controls; let i=index">
+
+                <input class="form-control" formControlName="{{i}}" placeholder="Step {{ i + 1 }}">
+
+                <span class="input-group-btn">
+                    <button type="button" (click)="removeStep(i)" *ngIf="i > 0 || steps.length > 1" class="btn btn-outline-danger" title="Remove step">X</button>
+                </span>
+            </div>
+            <button type="button" (click)="addStep()" class="btn btn-outline-primary">Add a step +</button>
+        </fieldset>
+
+        <fieldset class="form-group ingredients" formArrayName="ingredients">
+            <legend>Ingredients:</legend>
+
+            <div class="input-group" *ngFor="let ingredient of ingredients.controls; let i=index">
+
+                <input class="form-control" formControlName="{{i}}" placeholder="Ingredient {{ i + 1 }}">
+
+                <span class="input-group-btn">
+                    <button type="button" (click)="removeIngredient(i)" *ngIf="i > 0 || ingredients.length > 1" class="btn btn-outline-danger" title="Remove ingredient">X</button>
+                </span>
+            </div>
+            <button type="button" (click)="addIngredient()" class="btn btn-outline-primary">Add an ingredient +</button>
+        </fieldset>
+
+        <div class="form-group">
+            <label>Rating: {{ rating.value }}
+                <input #rating class="form-control" formControlName="rating" type="range" min="0" max="5">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>Image URL:
+                <input class="form-control" formControlName="image" type="text">
+            </label>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-success" (click)="onSubmit()"
+                [disabled]="cocktailForm.pristine || cocktailForm.invalid">
+                Save
+            </button>
+
+            <button type="reset" (click)="revert()" class="btn btn-secondary"
+                    [disabled]="cocktailForm.pristine">Revert
+            </button>
+        </div>
+    </fieldset>
+</form>
+
+{{ cocktailForm.value | json }}

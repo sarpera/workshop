@@ -1,0 +1,52 @@
+@import '../../styles/cocktails-list';
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5em;
+}
+
+
+.cocktails {
+  flex: 0 0 95%;
+  margin-right: auto !important;
+
+  &.shrink {
+    flex: 0 0 60%;
+  }
+}
+
+.cocktail-info {
+  flex: 0 0 35%;
+
+  section {
+    margin-bottom: 2em;
+  }
+
+  .recipe {
+
+  }
+
+  .ingredient {
+
+    color: #fff;
+    background-color: #007bff;
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    margin-right: .5em;
+  }
+}
+
+.cocktails-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+

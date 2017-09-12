@@ -1,0 +1,37 @@
+<div class="cocktails" [class.shrink]="cocktail">
+    <h1>Cocktails</h1>
+
+    <div class="cocktails-list">
+        <div class="cocktail" *ngFor="let cocktail of cocktails">
+            <div class="card-head" (click)="selectCocktail(cocktail)">
+                <span>{{ cocktail.name }}</span>
+            </div>
+            <div class="card-body">
+                {{ cocktail.description }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cocktail-info" *ngIf="cocktail">
+    <h1>{{ cocktail.name }}</h1>
+    <p>{{ cocktail.description }}</p>
+
+    <section>
+        <h2>Ingredients:</h2>
+        <div class="ingredients">
+            <span class="ingredient" *ngFor="let ingredient of cocktail.ingredients">{{ ingredient }}</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Recipe:</h2>
+        <div class="recipe">
+
+            <ul>
+                <li *ngFor="let step of cocktail.steps">{{ step }}</li>
+            </ul>
+
+        </div>
+    </section>
+</div>
