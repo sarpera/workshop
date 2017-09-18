@@ -5,7 +5,7 @@
         <button class="btn btn-outline-primary" (click)="showEditor = !showEditor">Add a cocktail</button>
     </p>
 
-    <np-cocktail-editor *ngIf="showEditor" [@flyInOut]="'in'" (saved)="fetchCocktails()"></np-cocktail-editor>
+    <np-cocktail-editor *ngIf="showEditor" (saved)="fetchCocktails()"></np-cocktail-editor>
 </div>
 
 <div class="cocktails-list">

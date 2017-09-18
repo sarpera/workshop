@@ -1,15 +1,15 @@
 <div class="jumbotron">
-  <h1>Cocktails</h1>
-  <p>There's a drink for every mood or occasion. Find your favorite cocktail recipes below</p>
+    <h1>Cocktails</h1>
+    <p>There's a drink for every mood or occasion. Find your favorite cocktail recipes below</p>
 </div>
 
 <div class="cocktails-list">
-  <div class="cocktail" *ngFor="let cocktail of cocktails">
-    <a class="card-head" [routerLink]="cocktail.id">
-      <span>{{ cocktail.name }}</span>
-    </a>
-    <div class="card-body">
-      {{ cocktail.description }}
+    <div class="cocktail" *ngFor="let cocktail of cocktails">
+        <a class="card-head" [routerLink]="cocktail.id">
+            <span>{{ cocktail.name }}</span>
+        </a>
+        <div class="card-body">
+            {{ cocktail.description }}
+        </div>
     </div>
-  </div>
 </div>
