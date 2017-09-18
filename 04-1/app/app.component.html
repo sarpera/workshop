@@ -1,0 +1,4 @@
+
+<np-cocktails class="cocktails" [class.shrink]="cocktail" (onSelect)="onCocktailSelect($event)"></np-cocktails>
+
+<np-cocktail class="cocktail-info" *ngIf="cocktail" [cocktail]="cocktail"></np-cocktail>

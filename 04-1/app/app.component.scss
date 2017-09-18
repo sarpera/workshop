@@ -1,0 +1,22 @@
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5em;
+}
+
+
+.cocktails {
+  flex: 0 0 95%;
+  margin-right: auto !important;
+
+  &.shrink {
+    flex: 0 0 60%;
+  }
+
+}
+.cocktail-info {
+  flex: 0 0 35%;
+}
+
+
